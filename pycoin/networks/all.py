@@ -8,6 +8,18 @@ from pycoin.block import Block as BitcoinBlock
 from ..serialize import h2b
 
 BUILT_IN_NETWORKS = [
+    
+    # NAV bitcoin mainnet : xprv/xpub
+    Network(
+        'NAV', "Navcoin", "mainnet",
+        b'\150', b'\53', b'\85', h2b("0488ADE4"), h2b("0488B21E"),
+        BitcoinTx, BitcoinBlock,
+        h2b('80503420'), 44440, [
+            "navtech1.navcoin.org", "navtech2.navcoin.org",
+            "navtech5.navcoin.org", "navtech4.navcoin.org",
+        ],
+        bech32_hrp='nv'
+    ),
 
     # BTC bitcoin mainnet : xprv/xpub
     Network(
