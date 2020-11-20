@@ -12,13 +12,25 @@ BUILT_IN_NETWORKS = [
     # NAV bitcoin mainnet : xprv/xpub
     Network(
         'NAV', "Navcoin", "mainnet",
-        b'\x96', b'\x35', b'\x55', h2b("0488ADE4"), h2b("0488B21E"),
+        b'\xef', b'\x6f', b'\xc4', h2b("40882BE1"), h2b("4088DA4E"),
         BitcoinTx, BitcoinBlock,
         h2b('80503420'), 44440, [
             "navtech1.navcoin.org", "navtech2.navcoin.org",
             "navtech5.navcoin.org", "navtech4.navcoin.org",
         ],
         bech32_hrp='nv'
+    ),
+    
+    # NAV testnet : xprv/xpub
+    Network(
+        'TNV', "Navcoin", "testnet",
+        b'\x96', b'\x35', b'\x55', h2b("0488ADE4"), h2b("0488B21E"),
+        BitcoinTx, BitcoinBlock,
+        h2b('3214f207'), 15559, [
+            "navtech1.navcoin.org", "navtech2.navcoin.org",
+            "navtech5.navcoin.org", "navtech4.navcoin.org",
+        ],
+        bech32_hrp='tnv'
     ),
 
     # BTC bitcoin mainnet : xprv/xpub
